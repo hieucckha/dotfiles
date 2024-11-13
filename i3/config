@@ -1,0 +1,154 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+ # set font
+font pango:Ionicons 9, Poppins Regular 9
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# auto start
+exec --no-startup-id hsetroot -center ~/Pictures/wallpaper.jpg
+exec --no-startup-id ibus-daemon -drxR
+exec --no-startup-id picom -b
+exec --no-startup-id nm-applet  &
+
+# start a terminal
+bindsym $super+Return exec wezterm
+
+# start dmenu (a program launcher)
+bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -b \
+-fn 'Poppins:size=9' -nb '#141c21' -nf '#93a1a1' \
+-sb '#289c93' -sf '#141c21'"
+bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sano:size=8'
+
+# common apps keybinds
+bindsym Print exec scrot '~/Pictures/screenshots/LacDa2_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
+
+# lock screen and shutdown
+bindsym $super+b exec i3lock -i ~/.lock.png
+bindsym $super+Shift+b exec exec shutdown -P now
+
+# change volume and brightness
+# install pulseaudio-alsa is needed
+bindsym XF86AudioRaiseVolume exec pamixer --increase 1
+bindsym XF86AudioLowerVolume exec pamixer --decrease 1
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# kill focused window
+bindsym $super+c kill
+bindsym $alt+F4 kill
+
+# change focus
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+
+# move focused window
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
+
+# split in horizontal orientation or vertical orientation
+bindsym $super+n split h
+bindsym $super+m split v
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# change container layout split
+bindsym $super+s layout toggle split
+
+# toggle tiling / floating
+bindsym $super+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $alt+Control+Right workspace next
+bindsym $alt+Control+Left workspace prev
+bindsym $super+1 workspace 1:I
+bindsym $super+2 workspace 2:II
+bindsym $super+3 workspace 3:III
+bindsym $super+4 workspace 4:IV
+bindsym $super+5 workspace 5:V
+bindsym $super+6 workspace 6:VI
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1:I
+bindsym $super+Shift+2 move container to workspace 2:II
+bindsym $super+Shift+3 move container to workspace 3:III
+bindsym $super+Shift+4 move container to workspace 4:IV
+bindsym $super+Shift+5 move container to workspace 5:V
+bindsym $super+Shift+6 move container to workspace 6:VI
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+
+# exit i3
+bindsym $super+q exec "i3-nagbar -t warning -m 'Really, exit?' \
+-b 'Yes' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
+	bindsym Return mode "default"
+	}
+bindsym $super+r mode "resize"
+
+# panel
+bar {
+	status_command i3status
+	position top
+	workspace_min_width 24
+	padding 2px 8px 2px 8px
+	strip_workspace_numbers yes
+
+	colors {
+	background #141c21
+	statusline #141c21
+	separator #141c21
+
+	# colour of border, background, and text
+	focused_workspace #141c21 #d12f2c #93a1a1
+	active_workspace #141c21 #141c21 #93a1a1
+	inactive_workspace #141c21 #141c21 #93a1a1
+	urgent_workspace #141c21 #b08500 #93a1a1
+	}
+}
+
+# colour of border, background, text, indicator, and child_border
+client.focused #d12f2c #263640 #93a1a1 #696ebf #2587cc1
+client.focused_inactive #263640 #b08500 #93a1a1 #263640 #263640
+client.unfocused #263640 #b08500 #93a1a1 #263640 #263640
+client.urgent #263640 #b08500 #93a1a1 #263640 #263640
+client.placeholder #263640 #b08500 #93a1a1 #263640 #263640
+client.background #263640
+
+# window rules, you can find the window class using xprop
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
+for_window [class=".*"] border pixel 3
+smart_borders on
+hide_edge_borders smart
+gaps inner 8
+gaps outer 0
