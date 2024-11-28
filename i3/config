@@ -27,7 +27,7 @@ bindsym $super+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show dru
 bindsym Print exec scrot '~/Pictures/screenshots/LacDa2_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
 
 # lock screen and shutdown
-bindsym $super+b exec i3lock -i ~/.lock.png
+bindsym $super+b exec betterlockscreen --lock dimblur
 bindsym $super+Shift+b exec exec shutdown -P now
 
 # change volume and brightness
