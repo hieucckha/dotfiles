@@ -24,3 +24,17 @@ set -gx PATH /opt/homebrew/sbin $PATH
 
 set -gx PATH $DOTNET_ROOT $PATH
 set -gx PATH $DOTNET_ROOT/tools $PATH
+
+if test (uname) = Darwin
+    if type -q eza
+        alias ll "eza -l -g --icons"
+        alias lla "ll -a"
+    end
+
+    set -g FZF_PREVIEW_FILE_CMD "bat --style=numsbers --color=always --line-range :500"
+    set -g FZF_LEGACY_KEYBINDINGS 0
+end
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :

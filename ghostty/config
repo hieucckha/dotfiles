@@ -1,12 +1,14 @@
-theme = "Gruvbox Material"
-
-background-opacity = 0.9
+background-opacity = 0.6
 background-blur-radius = 20
 
 cursor-style = block
 cursor-style-blink = true
 shell-integration-features = no-cursor
-
 macos-option-as-alt = left
+confirm-close-surface = false
 
 shell-integration = fish
+
+command = "/opt/homebrew/bin/fish -c 'tmux new -A -s ghostty'"
+
+keybind = ctrl+t=unbind

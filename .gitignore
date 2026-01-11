@@ -1,2 +1,9 @@
 # fish
 fish/fish_variables
+fish/completions/*
+fish/conf.d/*
+fish/functions/*
+fish/themes/*
+
+# tmux
+tmux/plugins/*
