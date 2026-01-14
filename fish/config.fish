@@ -1,6 +1,6 @@
 set fish_greeting
 
-set -gx TERM xterm-256color
+set -gx TERM tmux-256color
 
 set -g theme_color_scheme terminal-dark
 set -g fish_prompt_pwd_dir length 1
