@@ -47,6 +47,8 @@
 [mergetool "nvimdiff"]
   cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -mrege \"$MERGED\"
   trustExitCode = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
 
 [includeIf "gitdir:~/Workspaces/CRV/**"]
   path = ~/Workspaces/CRV/.gitconfig-crv

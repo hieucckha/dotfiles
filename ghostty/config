@@ -1,5 +1,8 @@
-background-opacity = 0.6
-background-blur-radius = 20
+background-opacity = 0.9
+background-blur = 20
+
+font-size = 15
+font-family = "Iosevka NFM Medium"
 
 cursor-style = block
 cursor-style-blink = true
