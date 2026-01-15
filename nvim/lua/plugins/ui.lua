@@ -34,6 +34,8 @@ return {
         replace_netrw = true,
         trash = true,
       },
+      indent = { },
+      picker = { },
     },
     keys = {
       { 
@@ -46,7 +48,10 @@ return {
             explorer_pickers[1]:focus()
           end
         end, 
-        desc = "File Explorer" },
+        desc = "File Explorer"
+      },
+      { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+      { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     }
   },
 
