@@ -13,6 +13,9 @@ alias la "la -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
+alias k kubectl
+alias d docker
+alias dc "docker compose"
 command -qv nvim && alias vi nvim
 
 set -gx EDITOR nvim
@@ -38,3 +41,10 @@ end
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# pnpm
+set -gx PNPM_HOME /Users/hieu/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
