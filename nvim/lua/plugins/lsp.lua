@@ -37,7 +37,6 @@ require("roslyn").setup({
   filewatching = "roslyn"
 })
 
-
 -- configure each lsp server on the table
 -- to check what clients are attached to the current buffer, use
 -- `:checkhealth vim.lsp`. to view default lsp keybindings, use `:h lsp-defaults`.

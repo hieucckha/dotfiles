@@ -9,6 +9,10 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "gruvbox.nvim": {
+      "rev": "3ffad346df3abb1fb5034e0620af921812aa0ce6",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
     "lualine.nvim": {
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"

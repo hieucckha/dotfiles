@@ -1,8 +1,5 @@
 -- INFO: colorscheme
 
-vim.pack.add({ "https://github.com/navarasu/onedark.nvim" }, { confirm = false })
-require("onedark").setup({
-  style = "deep",
-})
-vim.cmd.colorscheme("onedark")
-
+vim.pack.add({ "https://github.com/ellisonleao/gruvbox.nvim" }, { confirm = false })
+require("gruvbox").setup()
+vim.cmd.colorscheme("gruvbox")

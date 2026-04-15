@@ -14,8 +14,8 @@
 -- vary wildly. refer to each plugin's documentation for details.
 
 require("plugins.colorscheme")
-require("plugins.lsp")
 require("plugins.treesitter")
+require("plugins.lsp")
 require("plugins.complete")
 require("plugins.formatting")
 require("plugins.finder")

@@ -1,4 +1,4 @@
--- INFO: formatting and syntax highlighting
+-- INFO: identiation and syntax highlighting
 vim.pack.add({
   "https://github.com/nvim-treesitter/nvim-treesitter",
   "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
