@@ -1,16 +1,17 @@
-background-opacity = 0.9
-background-blur = 20
+background-opacity = 0.7
+background-opacity-cells = true
+background-blur = true
 
 font-size = 15
 font-family = "Iosevka NFM Medium"
 
 cursor-style = block
 cursor-style-blink = true
-shell-integration-features = no-cursor
 macos-option-as-alt = left
 confirm-close-surface = false
 
 shell-integration = fish
+shell-integration-features = no-cursor
 
 command = "/opt/homebrew/bin/fish -c 'tmux new -A -s ghostty'"
 
