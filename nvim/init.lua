@@ -158,7 +158,6 @@ for server, config in pairs(lsp_servers) do
 			end
 
 			vim.keymap.set("n", "grd", vim.lsp.buf.definition, { buffer = bufnr, desc = "vim.lsp.buf.definition()" })
-			vim.keymap.set("n", "grf", vim.lsp.buf.format, { buffer = bufnr, desc = "vim.lsp.buf.format()" })
 		end,
 	})
 end
@@ -309,6 +308,29 @@ require("blink.cmp").setup({
 	},
 })
 
+--INFO: formatting
+vim.pack.add({ "https://github.com/stevearc/conform.nvim" }, { confirm = false })
+
+require("conform").setup({
+	formatters_by_ft = {
+		lua = { "stylua" },
+	},
+	default_format_opts = {
+		lsp_format = "fallback",
+	},
+})
+vim.keymap.set({ "n", "v" }, "<leader>cn", "<cmd>ConformInfo<cr>", { desc = "Conform Info" })
+vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+	require("conform").format({ async = true }, function(err, did_edit)
+		if not err and did_edit then
+			vim.notify("Code formatted", vim.log.levels.INFO, { title = "Conform" })
+		end
+	end)
+end, { desc = "Format buffer" })
+vim.keymap.set({ "n", "v" }, "<leader>cF", function()
+	require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
+end, { desc = "Format Injected Langs" })
+
 -- INFO: fuzzy finder
 local hooks = function(ev)
 	local name, kind = ev.data.spec.name, ev.data.kind
@@ -340,7 +362,7 @@ vim.keymap.set("n", "<leader>fr", pickers.resume, { desc = "[S]earch [R]esume" }
 vim.keymap.set("n", "<leader>fh", pickers.help_tags, { desc = "[S]earch [H]elp" })
 vim.keymap.set("n", "<leader>fm", pickers.man_pages, { desc = "[S]earch [M]anuals" })
 
--- INFO: File pickers
+-- INFO: file pickers
 vim.pack.add({
 	"https://github.com/stevearc/oil.nvim",
 }, { confirm = false })
