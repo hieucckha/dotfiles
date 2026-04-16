@@ -13,6 +13,8 @@ require("blink.cmp").setup({
   completion = {
     documentation = {
       auto_show = true,
+      treesitter_highlighting = true,
+      window = { border = "rounded" }
     },
   },
   sources = {
@@ -42,4 +44,3 @@ require("blink.cmp").setup({
     ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
   },
 })
-

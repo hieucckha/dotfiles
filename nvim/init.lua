@@ -51,7 +51,7 @@ vim.opt.splitbelow = true
 -- See `:help 'list'`
 -- and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "» ", lead = "·", trail = "·", nbsp = "␣" }
 
 -- preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -85,5 +85,15 @@ vim.diagnostic.config({
 
 -- clear search highlights with <Esc>
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- highlight trailing whitespace
+vim.api.nvim_set_hl(0, 'TrailingWhitespace', { bg = 'LightRed' })
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = '*',
+  command = [[
+		syntax clear TrailingWhitespace |
+		syntax match TrailingWhitespace "\_s\+$"
+	]]
+})
 
 require("plugins")
