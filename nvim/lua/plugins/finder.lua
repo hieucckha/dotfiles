@@ -15,6 +15,7 @@ vim.pack.add({
   "https://github.com/nvim-tree/nvim-web-devicons",              -- icons (nerd font)
   "https://github.com/nvim-telescope/telescope.nvim",            -- the fuzzy finder
   "https://github.com/nvim-telescope/telescope-fzf-native.nvim", -- better performance
+  "https://github.com/MunifTanjim/nui.nvim",
 }, { confirm = false })
 
 local pickers = require("telescope.builtin")
