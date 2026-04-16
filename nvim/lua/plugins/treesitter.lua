@@ -5,6 +5,7 @@ vim.pack.add({
 }, { confirm = false })
 
 local languages = {
+	"c_sharp",
 	"lua",
 	"go",
 }
