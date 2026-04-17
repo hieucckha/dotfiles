@@ -23,6 +23,7 @@ local dap_and_formatter = {
 	"netcoredbg",
 	"stylua",
 	"gofumpt",
+	"csharpier",
 }
 
 vim.pack.add({
@@ -58,14 +59,6 @@ require("roslyn").setup({})
 for server, config in pairs(lsp_servers) do
 	vim.lsp.config(server, {
 		settings = config,
-
-		capabilities = {
-			workspace = {
-				didChangeWatchedFiles = {
-					dynamicRegistration = true,
-				},
-			},
-		},
 
 		-- only create the keymaps if the server attaches successfully
 		on_attach = function(client, bufnr)

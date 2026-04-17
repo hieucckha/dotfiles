@@ -29,10 +29,6 @@
       "rev": "b03fb0f20bc1d43daf558cda981a2be22e73ac42",
       "src": "https://github.com/mason-org/mason.nvim"
     },
-    "nui.nvim": {
-      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
-      "src": "https://github.com/MunifTanjim/nui.nvim"
-    },
     "nvim-autopairs": {
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
@@ -64,6 +60,10 @@
     "roslyn.nvim": {
       "rev": "6a5e60a7c25d9ce0835aa9c69379f1c92e0a9d56",
       "src": "https://github.com/seblyng/roslyn.nvim"
+    },
+    "telescope-frecency.nvim": {
+      "rev": "fc6418bf663a182b72427487246b870f2ddbbbe2",
+      "src": "https://github.com/nvim-telescope/telescope-frecency.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
