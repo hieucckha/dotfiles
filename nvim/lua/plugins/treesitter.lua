@@ -4,11 +4,14 @@ vim.pack.add({
 	"https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
 }, { confirm = false })
 
+-- stylua: ignore start
 local languages = {
-	"c_sharp",
 	"lua",
-	"go",
+	"c_sharp", "razor", "go", "dockerfile", "gitignore",
+	"javascript", "typescript", "tsx", "html", "css", "json", "yaml", "graphql",
+	"markdown", "markdown_inline",
 }
+-- stylua: ignore end
 
 require("nvim-treesitter").install(languages)
 vim.api.nvim_create_autocmd("FileType", {

@@ -19,7 +19,8 @@ local lsp_servers = {
 	},
 }
 
-local formatter = {
+local dap_and_formatter = {
+	"netcoredbg",
 	"stylua",
 	"gofumpt",
 }
@@ -45,7 +46,7 @@ require("mason").setup({
 })
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
-	ensure_installed = vim.list_extend(vim.tbl_keys(lsp_servers), formatter),
+	ensure_installed = vim.list_extend(vim.tbl_keys(lsp_servers), dap_and_formatter),
 })
 
 -- rosyln
@@ -57,6 +58,14 @@ require("roslyn").setup({})
 for server, config in pairs(lsp_servers) do
 	vim.lsp.config(server, {
 		settings = config,
+
+		capabilities = {
+			workspace = {
+				didChangeWatchedFiles = {
+					dynamicRegistration = true,
+				},
+			},
+		},
 
 		-- only create the keymaps if the server attaches successfully
 		on_attach = function(client, bufnr)

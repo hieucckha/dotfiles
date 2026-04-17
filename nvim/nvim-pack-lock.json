@@ -9,21 +9,9 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "gruvbox": {
-      "rev": "180ad85971343df68be3422a5630fa84e45a9ab2",
-      "src": "https://github.com/gruvbox-community/gruvbox"
-    },
     "gruvbox-material": {
       "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
       "src": "https://github.com/sainnhe/gruvbox-material"
-    },
-    "gruvbox.nvim": {
-      "rev": "3ffad346df3abb1fb5034e0620af921812aa0ce6",
-      "src": "https://github.com/ellisonleao/gruvbox.nvim"
-    },
-    "indent-blankline.nvim": {
-      "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
-      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
     },
     "lualine.nvim": {
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
@@ -50,7 +38,7 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lspconfig": {
-      "rev": "d10ce09e42bb0ca8600fd610c3bb58676e61208d",
+      "rev": "4b7fbaa239c5db6b36f424a4521ca9f1a401be33",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -69,28 +57,20 @@
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
     },
-    "onedark.nvim": {
-      "rev": "df4792accde9db0043121f32628bcf8e645d9aea",
-      "src": "https://github.com/navarasu/onedark.nvim"
-    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "roslyn.nvim": {
-      "rev": "f2ec6ee6384c3b611ddc817b9e78b20cd0334bbb",
+      "rev": "6a5e60a7c25d9ce0835aa9c69379f1c92e0a9d56",
       "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
       "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
     },
-    "telescope-ui-select.nvim": {
-      "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
-      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
-    },
     "telescope.nvim": {
-      "rev": "3ab376cfae65b921dda454df5967f8df673effc6",
+      "rev": "471eebb1037899fd942cc0f52c012f8773505da1",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "todo-comments.nvim": {
