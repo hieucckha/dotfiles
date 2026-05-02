@@ -24,7 +24,7 @@ set -gx SSH_AUTH_SOCK "~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/ag
 
 set -gx PATH /opt/homebrew/bin $PATH
 set -gx PATH /opt/homebrew/sbin $PATH
-
+set -gx PATH $HOME/.pub-cache/bin $PATH
 set -gx PATH $DOTNET_ROOT $PATH
 set -gx PATH $DOTNET_ROOT/tools $PATH
 
@@ -34,21 +34,17 @@ if test (uname) = Darwin
         alias lla "ll -a"
     end
 
-    set -g FZF_PREVIEW_FILE_CMD "bat --style=numsbers --color=always --line-range :500"
-    set -g FZF_LEGACY_KEYBINDINGS 0
+    if type -q mise
+      ~/.local/bin/mise activate fish | source
+    end
+
+    if type -q bat
+      set -g FZF_PREVIEW_FILE_CMD "bat --style=numsbers --color=always --line-range :500"
+      set -g FZF_LEGACY_KEYBINDINGS 0
+    end
+
 end
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
-
-# pnpm
-set -gx PNPM_HOME /Users/hieu/Library/pnpm
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
-
-# mise
-/Users/hieu/.local/bin/mise activate fish | source
-
