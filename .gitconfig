@@ -41,6 +41,12 @@
   email = hieucckha@gmail.com
 [diff]
   tool = nvimdiff
+[difftool "nvimdiff"]
+  cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "nvimdiff"]
+  cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 [includeIf "gitdir:~/Workspaces/crv/"]
   path = ~/Workspaces/crv/.gitconfig-crv
