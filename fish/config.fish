@@ -28,23 +28,23 @@ set -gx PATH $HOME/.pub-cache/bin $PATH
 set -gx PATH $DOTNET_ROOT $PATH
 set -gx PATH $DOTNET_ROOT/tools $PATH
 
-if test (uname) = Darwin
-    if type -q eza
-        alias ll "eza -l -g --icons"
-        alias lla "ll -a"
-    end
+if type -q eza
+    alias ll "eza -l -g --icons"
+    alias lla "ll -a"
+end
 
-    if type -q mise
-      ~/.local/bin/mise activate fish | source
-    end
+if type -q mise
+  ~/.local/bin/mise activate fish | source
+end
 
-    if type -q bat
-      set -g FZF_PREVIEW_FILE_CMD "bat --style=numsbers --color=always --line-range :500"
-      set -g FZF_LEGACY_KEYBINDINGS 0
-    end
-
+if type -q bat
+  set -g FZF_PREVIEW_FILE_CMD "bat --style=numsbers --color=always --line-range :500"
+  set -g FZF_LEGACY_KEYBINDINGS 0
 end
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+source "$HOME/.orbstack/shell/init2.fish" 2>/dev/null || :
+
+# cargo
+source "$HOME/.cargo/env.fish"
