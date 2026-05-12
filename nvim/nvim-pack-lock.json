@@ -20,6 +20,10 @@
       "rev": "6c283f8df85aa7219fa4096a6ed4ff45d48aa9e1",
       "src": "https://github.com/itchyny/lightline.vim"
     },
+    "lsp_signature.nvim": {
+      "rev": "f40bcf203812beaf26766ec0bc169a7f429fd730",
+      "src": "https://github.com/ray-x/lsp_signature.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "51feb0ada33d18f3c5c71ffb46005dbf8b33bef4",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -27,6 +31,10 @@
     "mason.nvim": {
       "rev": "e54f5bf5f12c560da31c17eee5b3e1bd369f3ff9",
       "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.icons": {
+      "rev": "9c7b1b90b15bdd69c52f6e31889dbc9987c30ec4",
+      "src": "https://github.com/nvim-mini/mini.icons"
     },
     "nvim-autopairs": {
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
@@ -39,6 +47,10 @@
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "vim-matchup": {
+      "rev": "dccb2d12ef2a703d2f076b3cda36a3339449d1eb",
+      "src": "https://github.com/andymass/vim-matchup"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",

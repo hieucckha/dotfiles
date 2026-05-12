@@ -322,7 +322,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<leader>a", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		vim.keymap.set("n", "<leader>f", function()
+		vim.keymap.set("n", "<leader>cf", function()
 			vim.lsp.buf.format({ async = true })
 		end, opts)
 
@@ -370,6 +370,9 @@ cmp.setup({
 	fuzzy = {
 		implementation = "prefer_rust_with_warning",
 	},
+	signature = {
+		enabled = false,
+	},
 	keymap = {
 		-- these are the default blink keymaps
 		["<C-n>"] = { "select_next", "fallback_to_mappings" },
@@ -400,16 +403,24 @@ require("oil").setup({
 })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<space>-", require("oil").toggle_float)
--- keybinding helper
-vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
+-- utility plugins
+vim.pack.add({
+	"https://github.com/folke/which-key.nvim", -- help remember the key
+	"https://github.com/nvim-mini/mini.icons",
+	"https://github.com/windwp/nvim-autopairs", -- auto pairs
+	"https://github.com/andymass/vim-matchup", -- better %
+	"https://github.com/ray-x/lsp_signature.nvim", -- inline function signatures
+}, { confirm = false })
 require("which-key").setup({
 	spec = {
 		{ "<leader>s", group = "[S]earch", icon = { icon = "", color = "green" } },
 	},
 })
--- utility plugins
-vim.pack.add({
-	"https://github.com/windwp/nvim-autopairs", -- auto pairs
-}, { confirm = false })
-
 require("nvim-autopairs").setup()
+vim.g.matchup_matchparen_offscreen = { method = "popup" }
+require("lsp_signature").setup({
+	doc_lines = 0,
+	handler_opts = {
+		border = "none",
+	},
+})
