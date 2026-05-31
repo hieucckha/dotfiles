@@ -29,7 +29,8 @@ set -gx PATH $DOTNET_ROOT $PATH
 set -gx PATH $DOTNET_ROOT/tools $PATH
 
 if type -q eza
-    alias ll "eza -l -g --icons"
+    alias ls "eza --icons"
+    alias ll "ls -l -g"
     alias lla "ll -a"
 end
 
